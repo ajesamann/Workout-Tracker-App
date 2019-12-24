@@ -1,0 +1,44 @@
+.workout-main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.workout-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e6e6e6;
+  border-radius: 8px;
+  padding: 20px 50px;
+  width: 100%;
+  width: 650px;
+}
+
+.delete {
+  color: #ff7728;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 15px;
+  line-height: 1rem;
+  user-select: none;
+}
+
+.workout-numbers {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  user-select: none;
+}
+
+.workout,
+.reps,
+.sets,
+.x {
+  font-size: 1.3rem;
+  margin: 0 15px;
+  color: #6449ff;
+  user-select: none;
+}

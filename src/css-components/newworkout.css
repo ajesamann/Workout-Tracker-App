@@ -1,0 +1,54 @@
+.new-workout-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.new-workout-inputs {
+  display: flex;
+  margin-top: 20px;
+}
+
+.new-workout-buttons {
+  display: flex;
+  margin-top: 30px;
+}
+
+.submit-workout {
+  margin-left: auto;
+  background-color: #6449ff;
+  border: none;
+  padding: 10px 30px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+.close {
+  background-color: #ff7728;
+  border: none;
+  padding: 10px 30px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+.new-workout-inputs input {
+  border: none;
+  border-bottom: 2px solid #6449ff;
+  text-align: center;
+  font-size: 0.95rem;
+  padding-bottom: 10px;
+  outline: none;
+  color: #6449ff;
+}
+
+.new-workout-inputs input:nth-child(2),
+.new-workout-inputs input:nth-child(3) {
+  margin-left: 20px;
+}

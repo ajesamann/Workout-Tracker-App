@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin-top: 15px;
+  padding: 30px 200px;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  width: 30%;
+}
+
+.input-wrapper p {
+  margin: 0 0 30px 0;
+  font-size: 1.7rem;
+  color: #6449ff;
+  user-select: none;
+}
+
+.no-workouts {
+  color: #ff7728;
+  font-size: 1.1rem;
+  user-select: none;
+}
+
+.workout-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin-top: 15px;
+  padding: 30px 200px;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  width: 30%;
+}
+
+.addWorkout {
+  margin: 0 0 15px 0;
+  background-color: #6449ff;
+  border: none;
+  padding: 10px 30px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.workout-title {
+  font-size: 1.4rem;
+  margin: 0 0 20px 0;
+  color: #6449ff;
+  user-select: none;
+}
