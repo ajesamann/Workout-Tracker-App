@@ -6,14 +6,43 @@ import Workout from "./Workout";
 class App extends Component {
   state = {
     showWorkoutInput: false,
+    showAddWeight: false,
+    isKgChecked: false,
+    hasBeenConverted: false,
     workout: "",
     sets: "",
     reps: "",
+    weight: "",
+    permWeight: "",
+    convertedWeight: "",
     workouts: []
   };
 
+  handleAddWeight = () => {
+    this.setState({ showAddWeight: !this.state.showAddWeight });
+  };
+
+  handleRemoveWeight = () => {
+    this.setState({
+      showAddWeight: !this.state.showAddWeight,
+      isKgChecked: false,
+      weight: ""
+    });
+  };
+
   handleHideWorkout = () => {
-    this.setState({ showWorkoutInput: !this.state.showWorkoutInput });
+    this.setState({
+      showWorkoutInput: !this.state.showWorkoutInput,
+      workout: "",
+      sets: "",
+      reps: "",
+      weight: ""
+    });
+  };
+
+  handleKgChecked = e => {
+    let checked = e.target.checked;
+    this.setState({ isKgChecked: checked });
   };
 
   handleWorkoutChange = e => {
@@ -28,11 +57,19 @@ class App extends Component {
     this.setState({ reps: e.target.value });
   };
 
+  handleWeightChange = e => {
+    this.setState({ weight: e.target.value, permWeight: e.target.value });
+  };
+
   handleNewWorkout = () => {
     const workout = {
       workout: this.state.workout,
       reps: this.state.reps,
       sets: this.state.sets,
+      weight: this.state.weight,
+      permWeight: this.state.permWeight,
+      hasBeenConverted: this.state.hasBeenConverted,
+      useKg: this.state.isKgChecked,
       id: 0
     };
 
@@ -43,16 +80,51 @@ class App extends Component {
     this.state.workouts.push(workout);
 
     this.setState({
-      workouts: this.state.workouts,
-      workout: "",
-      sets: "",
-      reps: ""
+      workouts: this.state.workouts
     });
   };
 
   handleDelete = workoutId => {
     const workouts = this.state.workouts.filter(w => w.id !== workoutId);
     this.setState({ workouts });
+  };
+
+  handleConversion = (
+    kgBoolean,
+    weightToBeConverted,
+    permanentWeight,
+    hasBeenConverted,
+    workoutId
+  ) => {
+    if (kgBoolean === true) {
+      let newWeight = weightToBeConverted * 2.205;
+      this.setState(prev => ({
+        workouts: prev.workouts.map(workout =>
+          workout.id === workoutId
+            ? {
+                ...workout,
+                weight: newWeight.toFixed(0).toString(),
+                useKg: false,
+                hasBeenConverted: !hasBeenConverted
+              }
+            : workout
+        )
+      }));
+    } else if (kgBoolean === false) {
+      let newWeight = weightToBeConverted / 2.205;
+      this.setState(prev => ({
+        workouts: prev.workouts.map(workout =>
+          workout.id === workoutId
+            ? {
+                ...workout,
+                weight: newWeight.toFixed(0).toString(),
+                useKg: true,
+                hasBeenConverted: !hasBeenConverted
+              }
+            : workout
+        )
+      }));
+    }
   };
 
   render() {
@@ -73,8 +145,12 @@ class App extends Component {
           {this.state.showWorkoutInput ? (
             <NewWorkout
               value={this.state}
+              kgChecked={this.handleKgChecked}
+              addWeight={this.handleAddWeight}
+              removeWeight={this.handleRemoveWeight}
               workoutChange={this.handleWorkoutChange}
               repsChange={this.handleRepsChange}
+              weightChange={this.handleWeightChange}
               setsChange={this.handleSetsChange}
               closeWorkout={this.handleHideWorkout}
               newWorkout={this.handleNewWorkout}
@@ -90,6 +166,12 @@ class App extends Component {
               <Workout
                 key={workout.id}
                 id={workout.id}
+                convert={this.handleConversion}
+                addWeight={this.state.showAddWeight}
+                beenConverted={workout.hasBeenConverted}
+                useKg={workout.useKg}
+                weight={workout.weight}
+                permWeight={workout.permWeight}
                 workout={workout.workout}
                 reps={workout.reps}
                 sets={workout.sets}

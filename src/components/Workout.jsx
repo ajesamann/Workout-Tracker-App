@@ -10,6 +10,27 @@ const Workout = props => {
         <p className="workout">
           <b>{props.workout}</b>
         </p>
+        {props.weight.length > 0 ? (
+          <div
+            className="weight"
+            onClick={() =>
+              props.convert(
+                props.useKg,
+                props.weight,
+                props.permWeight,
+                props.beenConverted,
+                props.id
+              )
+            }
+          >
+            {props.beenConverted === false ? (
+              <span>{props.permWeight}</span>
+            ) : (
+              <span>{props.weight}</span>
+            )}{" "}
+            {props.useKg === true ? <span> kg</span> : <span> lbs</span>}
+          </div>
+        ) : null}
         <div className="workout-numbers">
           <p className="reps">
             <b>{props.reps}</b> reps

@@ -23,11 +23,41 @@ const NewWorkout = props => {
           onChange={props.setsChange}
           placeholder="Total Sets..."
         />
+        {props.value.showAddWeight === true ? (
+          <input
+            value={props.value.weight}
+            onChange={props.weightChange}
+            placeholder="Weight"
+            type="text"
+          />
+        ) : null}
       </div>
       <div className="new-workout-buttons">
         <button className="close" onClick={props.closeWorkout}>
           Close
         </button>
+        {props.value.showAddWeight === false ? (
+          <div className="add-weight" onClick={props.addWeight}>
+            Add Weight
+          </div>
+        ) : (
+          <div className="add-weight-con">
+            <div className="remove-weight" onClick={props.removeWeight}>
+              Remove Weight
+            </div>
+            <div className="kg">
+              <label htmlFor="kg-checkbox" className="kg-label">
+                <input
+                  type="checkbox"
+                  id="kg-checkbox"
+                  onChange={props.kgChecked}
+                />
+                <div className="">Use kilograms</div>
+                <div className="kg-custom-checkbox"></div>
+              </label>
+            </div>
+          </div>
+        )}
         <button className="submit-workout" onClick={props.newWorkout}>
           Submit Workout
         </button>

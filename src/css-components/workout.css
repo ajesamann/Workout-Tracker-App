@@ -17,6 +17,18 @@
   width: 650px;
 }
 
+.weight {
+  font-size: 1.3rem;
+  margin: 0 15px;
+  color: #6449ff;
+  user-select: none;
+  background-color: #190f50;
+  padding: 6px 12px;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
 .delete {
   color: #ff7728;
   font-size: 1.5rem;

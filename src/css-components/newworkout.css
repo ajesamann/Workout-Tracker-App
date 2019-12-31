@@ -12,11 +12,12 @@
 
 .new-workout-buttons {
   display: flex;
+  justify-content: space-between;
+  align-items: baseline;
   margin-top: 30px;
 }
 
 .submit-workout {
-  margin-left: auto;
   background-color: #6449ff;
   border: none;
   padding: 10px 30px;
@@ -26,6 +27,70 @@
   outline: none;
   user-select: none;
 }
+
+.add-weight {
+  color: #6449ff;
+  text-decoration: underline;
+  cursor: pointer;
+  user-select: none;
+}
+
+.remove-weight {
+  color: #ff7728;
+  text-decoration: underline;
+  cursor: pointer;
+  user-select: none;
+}
+
+.add-weight-con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  white-space: nowrap;
+}
+
+/** CHECKBOX STYLING FOR WEIGHT **/
+
+.kg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.kg-label {
+  color: #6449ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  margin-left: 20px;
+}
+
+.kg-label input {
+  user-select: none;
+  display: none;
+}
+
+.kg-custom-checkbox {
+  user-select: none;
+  visibility: hidden;
+  width: 5px;
+  height: 11px;
+  border: solid #6449ff;
+  border-width: 0 4px 4px 0;
+  transform: rotate(40deg);
+  margin-left: 12px;
+}
+
+.kg-label input:checked ~ .kg-custom-checkbox {
+  visibility: visible;
+  user-select: none;
+}
+
+/** -----------------------------**/
 
 .close {
   background-color: #ff7728;
@@ -49,6 +114,7 @@
 }
 
 .new-workout-inputs input:nth-child(2),
-.new-workout-inputs input:nth-child(3) {
+.new-workout-inputs input:nth-child(3),
+.new-workout-inputs input:nth-child(4) {
   margin-left: 20px;
 }
