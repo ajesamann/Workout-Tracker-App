@@ -1,5 +1,5 @@
 import React from "react";
-import "../css-components/newworkout.css";
+import "../css/newworkout.css";
 
 const NewWorkout = props => {
   return (

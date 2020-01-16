@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../css-components/app.css";
+import "../css/app.css";
 import NewWorkout from "./NewWorkout";
 import Workout from "./Workout";
 

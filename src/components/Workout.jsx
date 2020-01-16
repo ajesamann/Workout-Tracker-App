@@ -1,5 +1,5 @@
 import React from "react";
-import "../css-components/workout.css";
+import "../css/workout.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinusCircle } from "@fortawesome/free-solid-svg-icons";
 
