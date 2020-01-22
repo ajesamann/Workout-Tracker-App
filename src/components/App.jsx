@@ -89,6 +89,10 @@ class App extends Component {
     this.setState({ workouts });
   };
 
+  resetInputs = () => {
+    this.setState({ sets: "", reps: "", weight: "", workout: "" });
+  };
+
   handleConversion = (
     kgBoolean,
     weightToBeConverted,
@@ -154,6 +158,7 @@ class App extends Component {
               setsChange={this.handleSetsChange}
               closeWorkout={this.handleHideWorkout}
               newWorkout={this.handleNewWorkout}
+              resetInputs={this.resetInputs}
             />
           ) : null}
         </div>

@@ -58,7 +58,13 @@ const NewWorkout = props => {
             </div>
           </div>
         )}
-        <button className="submit-workout" onClick={props.newWorkout}>
+        <button
+          className="submit-workout"
+          onClick={() => {
+            props.newWorkout();
+            props.resetInputs();
+          }}
+        >
           Submit Workout
         </button>
       </div>
