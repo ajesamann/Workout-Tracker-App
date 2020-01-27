@@ -27,7 +27,7 @@ const NewWorkout = props => {
           <input
             value={props.value.weight}
             onChange={props.weightChange}
-            placeholder="Weight"
+            placeholder="Weight..."
             type="text"
           />
         ) : null}

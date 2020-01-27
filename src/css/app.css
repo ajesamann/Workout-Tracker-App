@@ -6,6 +6,12 @@
   width: 100%;
 }
 
+.workout-convert {
+  font-size: 1rem;
+  text-align: center;
+  color: #6449ff;
+}
+
 .input-wrapper {
   display: flex;
   flex-direction: column;
@@ -13,23 +19,27 @@
   align-items: center;
   background-color: white;
   margin-top: 15px;
-  padding: 30px 200px;
   border-radius: 10px;
+  padding: 30px 0;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
-  width: 45%;
+  width: 90%;
 }
 
 .input-wrapper p {
   margin: 0 0 30px 0;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
+  white-space: nowrap;
   color: #6449ff;
   user-select: none;
 }
 
 .no-workouts {
   color: #ff7728;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  text-align: center;
   user-select: none;
+  margin: 200px 0;
 }
 
 .workout-wrapper {
@@ -39,26 +49,42 @@
   align-items: center;
   background-color: white;
   margin-top: 15px;
-  padding: 30px 200px;
+  margin-bottom: 50px;
+  padding: 30px 0;
   border-radius: 10px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
-  width: 45%;
+  width: 90%;
 }
 
 .addWorkout {
-  margin: 0 0 15px 0;
   background-color: #6449ff;
   border: none;
   padding: 10px 30px;
   color: white;
   border-radius: 5px;
+  white-space: nowrap;
   cursor: pointer;
   outline: none;
 }
 
 .workout-title {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  white-space: nowrap;
   margin: 0 0 20px 0;
   color: #6449ff;
   user-select: none;
+}
+
+@media screen and (min-width: 1200px) {
+  .input-wrapper {
+    width: 65%;
+  }
+
+  .workout-wrapper {
+    width: 65%;
+  }
+
+  .workout-convert {
+    margin: 0 0 20px 0;
+  }
 }

@@ -36,7 +36,8 @@ class App extends Component {
       workout: "",
       sets: "",
       reps: "",
-      weight: ""
+      weight: "",
+      showAddWeight: false
     });
   };
 
@@ -90,7 +91,13 @@ class App extends Component {
   };
 
   resetInputs = () => {
-    this.setState({ sets: "", reps: "", weight: "", workout: "" });
+    this.setState({
+      sets: "",
+      reps: "",
+      weight: "",
+      workout: "",
+      showWorkoutInput: false
+    });
   };
 
   handleConversion = (
@@ -164,6 +171,9 @@ class App extends Component {
         </div>
         <div className="workout-wrapper">
           <p className="workout-title">Your Workouts</p>
+          <p className="workout-convert">
+            Click your weight to see it be converted!
+          </p>
           {this.state.workouts.length === 0 ? (
             <p className="no-workouts">You have no workouts! Pathetic.</p>
           ) : (

@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/workout.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinusCircle } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const Workout = props => {
   return (
@@ -32,17 +32,15 @@ const Workout = props => {
           </div>
         ) : null}
         <div className="workout-numbers">
-          <p className="reps">
-            <b>{props.reps}</b> reps
-          </p>
+          <p className="reps">{props.reps} reps</p>
           <span className="x">x</span>
-          <p className="sets">
-            <b>{props.sets}</b> sets
-          </p>
+          <p className="sets">{props.sets} sets</p>
         </div>
-      </div>
-      <div onClick={() => props.onDelete(props.id)} className="delete">
-        <FontAwesomeIcon icon={faMinusCircle} />
+        <div onClick={() => props.onDelete(props.id)} className="delete">
+          <div className="icon">
+            <FontAwesomeIcon icon={faTrash} />
+          </div>
+        </div>
       </div>
     </div>
   );

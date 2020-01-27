@@ -2,40 +2,49 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .workout-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   background-color: #e6e6e6;
   border-radius: 8px;
-  padding: 20px 50px;
-  width: 100%;
-  width: 650px;
+  padding: 35px 0 50px 0;
+  position: relative;
+  width: 90%;
 }
 
 .weight {
   font-size: 1.3rem;
-  margin: 0 15px;
   color: #6449ff;
   user-select: none;
   background-color: #190f50;
   padding: 6px 12px;
   border-radius: 5px;
-  margin-left: 10px;
+  margin: 20px 0;
   cursor: pointer;
 }
 
 .delete {
-  color: #ff7728;
-  font-size: 1.5rem;
+  color: white;
+  display: flex;
+  padding: 11px 13.5px;
+  border-radius: 5px;
+  background-color: #ff7728;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  font-size: 1rem;
+  border-radius: 100px;
   cursor: pointer;
-  margin-left: 15px;
-  line-height: 1rem;
   user-select: none;
+  position: absolute;
+  bottom: -23px;
 }
 
 .workout-numbers {
@@ -49,8 +58,56 @@
 .reps,
 .sets,
 .x {
-  font-size: 1.3rem;
+  display: flex;
+  font-size: 1.2rem;
   margin: 0 15px;
   color: #6449ff;
   user-select: none;
+}
+
+.workout {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.reps,
+.sets,
+.x {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 1000px) {
+  .workout-container {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 30px 0;
+  }
+
+  .workout-main-container {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .weight {
+    margin: 0;
+  }
+
+  .workout,
+  .reps,
+  .sets,
+  .x {
+    font-size: 1.3rem;
+    margin: 0 15px;
+  }
+
+  .workout {
+    font-size: 1.4rem;
+  }
+
+  .delete {
+    position: relative;
+    bottom: 0;
+    margin-top: 0;
+  }
 }
